@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Edit Remove</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul id="lang">
+        <li>HTML</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(LanguageName)
+    {
+        const res=document.createElement('li');
+        // res.innerHTML=`${LanguageName}`;
+        const addText=document.createTextNode(LanguageName);
+        res.appendChild(addText);
+        document.querySelector('#lang').appendChild(res);
+    }
+    addLanguage("CSS");
+    addLanguage("Javascript");
+    addLanguage("Node js");
+
+    /*Edit*/
+
+    const res=document.querySelector('li:nth-child(2)');
+    res.outerHTML='<li>Ruby</li>'; 
+    
+    /*Edit*/
+
+    const element=document.querySelector('li:nth-child(3)');
+    const newEle=document.createElement('li');
+    newEle.textContent="Java";
+    element.replaceWith(newEle);
+
+    /*Remove*/
+
+    const ele=document.querySelector('li:nth-child(2)');
+    ele.remove();
+
+
+
+
+
+
+
+</script>
+</html>
